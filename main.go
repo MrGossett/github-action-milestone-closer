@@ -52,7 +52,7 @@ func doTheThing(client ifi) error {
 	}
 
 	for _, m := range milestones {
-		shouldClose := (*m.OpenIssues == 0 && m.DueOn.After(time.Now()) && m.ClosedAt == nil)
+		shouldClose := (*m.OpenIssues == 0 && m.DueOn.Before(time.Now()) && m.ClosedAt == nil)
 		if !shouldClose {
 			continue
 		}
