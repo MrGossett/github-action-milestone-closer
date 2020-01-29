@@ -33,7 +33,7 @@ func TestDoTheThing(t *testing.T) {
 		State:      func(s string) *string { return &s }("open"),
 	})
 	assert.NoError(t, doTheThing(client))
-	assert.Equal(t, *client.milestones[0].State, "closed")
+	assert.Equal(t, "closed", *client.milestones[0].State)
 
 	// does not close a milestone that has no open issues but is not past due
 	client.milestones = append(client.milestones, &github.Milestone{
@@ -43,7 +43,7 @@ func TestDoTheThing(t *testing.T) {
 		State:      func(s string) *string { return &s }("open"),
 	})
 	assert.NoError(t, doTheThing(client))
-	assert.Equal(t, *client.milestones[1].State, "open")
+	assert.Equal(t, "open", *client.milestones[1].State)
 
 	// does not close a milestone that is past due but has open issues
 	client.milestones = append(client.milestones, &github.Milestone{
@@ -53,7 +53,7 @@ func TestDoTheThing(t *testing.T) {
 		State:      func(s string) *string { return &s }("open"),
 	})
 	assert.NoError(t, doTheThing(client))
-	assert.Equal(t, *client.milestones[2].State, "open")
+	assert.Equal(t, "open", *client.milestones[2].State)
 }
 
 var _ ifi = &testClient{}
