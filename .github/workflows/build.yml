@@ -9,7 +9,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: runner
+  IMAGE_NAME: milestone-closer
 
 name: Build
 jobs:
