@@ -1,0 +1,9 @@
+name: 'Milestone Closer'
+description: 'Closes Issue Milestones in a GitHub repository that have zero open issues and are past-due.'
+author: 'MrGossett'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'calendar'
+  color: 'gray-dark'
