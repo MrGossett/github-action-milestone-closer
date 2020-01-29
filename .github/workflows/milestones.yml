@@ -32,6 +32,6 @@ jobs:
     name: Milestones Closer
     steps:
     - name: Close Milestones
-      uses: MrGossett/github-action-milestone-closer@v1
+      uses: MrGossett/github-action-milestone-closer@v1.1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
